@@ -6,6 +6,5 @@ require([
 ], function(MapA, MapB, MapC) {
     MapA.startup();
     MapB.startup();
-    sMapC.startup();
+    MapC.startup();
 });
-	
