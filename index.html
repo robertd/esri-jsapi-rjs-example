@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create a Map</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-	<link rel="stylesheet" href="http://js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css">
-	<link rel="stylesheet" href="http://js.arcgis.com/3.7/js/esri/css/esri.css">
-	<style>
-		html, body {
-			padding: 0;
-			margin: 0;
-		}
+    <title>Create a Map</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.7/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.7/js/esri/css/esri.css">
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
 
-		#mapDivA, #mapDivB, #mapDivC {
-			height: 200px;
-		}
-	</style>
-	<script> 
-		var dojoConfig = {
-			parseOnLoad: true,
-			packages: [
-				{ name: "app", location: location.pathname.replace(/[^\/]+$/, '') + "js/app" }
-			]
-		};
-	</script>
-	<script src="http://js.arcgis.com/3.7/"></script>
+        #mapDivA, #mapDivB, #mapDivC {
+            height: 200px;
+        }
+    </style>
+    <script> 
+        var dojoConfig = {
+            parseOnLoad: true,
+            packages: [
+                { name: "app", location: location.pathname.replace(/[^\/]+$/, '') + "js/app" }
+            ]
+        };
+    </script>
+    <script src="http://js.arcgis.com/3.7/"></script>
 </head>
 
 <body class="claro">
-	<div id="mapDivA"></div>
-	<div id="mapDivB"></div>
-	<div id="mapDivC"></div>
-	<script type="text/javascript" src="js/main.js"></script>
+    <div id="mapDivA"></div>
+    <div id="mapDivB"></div>
+    <div id="mapDivC"></div>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
