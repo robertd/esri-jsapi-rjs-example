@@ -1,0 +1,14 @@
+{
+  "name": "esri-jsapi-rjs-example",
+  "version": "0.0.0",
+  "description": "ESRI JSAPI & r.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertd/esri-jsapi-rjs-example.git"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt": "~0.4.2"
+  }
+}
