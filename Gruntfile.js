@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         options: {
           baseUrl: 'js',
           name: 'main',
-          out: 'js/main-built.js',
+          out: 'dist/main-built.js',
           paths: {
             'esri': 'empty:',
             'dojo': 'empty:',
@@ -42,8 +42,8 @@ module.exports = function (grunt) {
 
     replace: {
       example: {
-        src: ['js/main-built.js'],
-        dest: 'js/main-built.js',
+        src: ['dist/main-built.js'],
+        dest: 'dist/main-built.js',
         replacements: [{
           from: 'text!',
           to: ''
