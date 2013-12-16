@@ -7,7 +7,7 @@ module.exports = function (grunt) {
             compile: {
                 options: {
                     appDir: "js",
-                    baseUr: ".",
+                    baseUrl: ".",
                     dir: "dist",
                     paths: {
                         "esri" : "empty:",
