@@ -19,6 +19,7 @@
     <script>
         var dojoConfig = {
             parseOnLoad: true,
+            aliases: [['text', 'dojo/text'], ['domReady', 'dojo/domReady']],
             packages: [
                 { name: "app", location: location.pathname.replace(/[^\/]+$/, '') + "js/app" }
             ]
