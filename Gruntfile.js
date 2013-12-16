@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-text-replace');
 
   grunt.initConfig({
     requirejs: {
@@ -34,13 +35,23 @@ module.exports = function (grunt) {
           },
           exclude: ['esri', 'dojo', 'dojox', 'dijit', 'text', 'domReady'],
           inlineText: true,
-          optimize: 'uglify2',
-          optimizeAllPluginResources: true
+          optimize: 'uglify2'
         }
+      }
+    },
+
+    replace: {
+      example: {
+        src: ['js/main-built.js'],
+        dest: 'js/main-built.js',
+        replacements: [{
+          from: 'text!',
+          to: ''
+        }]
       }
     }
   });
 
   grunt.registerTask("build", ["requirejs:compile"]);
-  grunt.registerTask("single", ["requirejs:single"]);
+  grunt.registerTask("single", ["requirejs:single", "replace"]);
 };
