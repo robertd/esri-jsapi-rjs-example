@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     requirejs: {
+      // configuration for a multi-file build
       compile: {
         options: {
           baseUrl: '.',
@@ -19,6 +20,7 @@ module.exports = function (grunt) {
           optimize: 'uglify2'
         }
       },
+      // configuration for a single-file build
       single: {
         options: {
           baseUrl: 'src/js',
@@ -40,6 +42,7 @@ module.exports = function (grunt) {
     },
 
     replace: {
+      // needed for inlined templated in single-file build
       "main-built": {
         src: ['dist/js/main-built.js'],
         dest: 'dist/js/main-built.js',
@@ -48,6 +51,7 @@ module.exports = function (grunt) {
           to: ''
         }]
       },
+      // replace reference to main file for single file build
       index: {
         src: ['src/index.html'],
         dest: 'dist/index.html',
@@ -62,6 +66,7 @@ module.exports = function (grunt) {
       }
     },
 
+    // needed for single file build
     clean: {
       single: ['dist']
     }
