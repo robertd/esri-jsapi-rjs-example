@@ -3,7 +3,7 @@ require([
   "app/mapA",
   "app/mapB",
   "app/mapC",
-  "app/TemplatedWidget",
+  "app/wijit/TemplatedWidget",
   "domReady!"
 ], function(dom, MapA, MapB, MapC, TemplatedWidget) {
   MapA.startup();

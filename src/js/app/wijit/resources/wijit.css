@@ -1,0 +1,5 @@
+.templatedWidget {
+  background-image: url('img/gray-gradient.jpg');
+  background-repeat: repeat-x;
+  height: 200px;
+}
