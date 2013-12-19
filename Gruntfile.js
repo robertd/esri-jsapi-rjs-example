@@ -84,7 +84,7 @@ module.exports = function (grunt) {
       // r.js doesn't trace background image paths through url()
       single: {
         files: [
-          {expand: true, cwd: 'src/css/', src:['img/**'], dest: 'dist/css/'}
+          {expand: true, cwd: 'src/js/app/wijit/resources/', src:['img/**'], dest: 'dist/js/app/wijit/resources/'}
         ]
       }
     }
