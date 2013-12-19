@@ -1,0 +1,11 @@
+@import url("reset.css");
+@import url("../js/app/wijit/resources/wijit.css");
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#mapDivA, #mapDivB, #mapDivC {
+  height: 200px;
+}
