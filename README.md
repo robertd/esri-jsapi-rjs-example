@@ -32,6 +32,8 @@ aliases: [['text', 'dojo/text'], ['domReady', 'dojo/domReady']]
 
 The above worked for a multi-file build, but there were still issues with inlining text (templates) when creating a single-file build. @odoe figured out how to do a quick find and replace on the built file using `grunt-contrib-text-replace` that enabled the Dojo loader to load the built templates.
 
+NOTE: Whenever there is more than one way to accomplish a build step, the examples in this repo give preference to doing things the r.js way. For example, it's possible to use `grunt-contrib-cssmin` to minify and concatenate CSS files, but the examples in this repo let r.js do it (using `cssIn` in the case of the single-file build).
+
 ## Potential Issues
 Other Dojo plugins like `i18n` and `has` have not been tested and it is likely that they will cause build issues.
 
