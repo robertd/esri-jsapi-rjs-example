@@ -2,6 +2,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-text-replace');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.initConfig({
     requirejs: {
@@ -38,6 +39,13 @@ module.exports = function (grunt) {
           inlineText: true,
           optimize: 'uglify2'
         }
+      },
+      // used in single file build to optimize static resources such as css images
+      css: {
+        options: {
+          cssIn: 'src/css/app.css',
+          out: 'dist/css/app.css'
+        }
       }
     },
 
@@ -69,9 +77,19 @@ module.exports = function (grunt) {
     // needed for single file build
     clean: {
       single: ['dist']
+    },
+
+    copy: {
+      // needed for single file build
+      // r.js doesn't trace background image paths through url()
+      single: {
+        files: [
+          {expand: true, cwd: 'src/css/', src:['img/**'], dest: 'dist/css/'}
+        ]
+      }
     }
   });
 
   grunt.registerTask("compile", ["requirejs:compile"]);
-  grunt.registerTask("single", ["clean", "requirejs:single", "replace"]);
+  grunt.registerTask("single", ["clean", "requirejs:single", "replace", "requirejs:css", "copy"]);
 };
