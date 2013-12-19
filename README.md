@@ -37,7 +37,7 @@ Other Dojo plugins like `i18n` and `has` have not been tested and it is likely t
 
 ## License
 
-Copyright (c) <2013> <Robert Djurasaj>
+Copyright (c) 2013 Robert Djurasaj
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
