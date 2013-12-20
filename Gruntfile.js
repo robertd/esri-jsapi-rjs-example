@@ -33,9 +33,10 @@ module.exports = function (grunt) {
             'dojox': 'empty:',
             'dijit': 'empty:',
             'text': '../../deps/text/text',
-            'domReady': '../../deps/domReady/domReady'
+            'domReady': '../../deps/domReady/domReady',
+            'i18n': '../../deps/i18n/i18n'
           },
-          exclude: ['esri', 'dojo', 'dojox', 'dijit', 'text', 'domReady'],
+          exclude: ['esri', 'dojo', 'dojox', 'dijit', 'text', 'domReady', 'i18n'],
           inlineText: true,
           optimize: 'uglify2'
         }
