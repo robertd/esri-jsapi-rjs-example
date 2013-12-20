@@ -38,6 +38,8 @@ module.exports = function (grunt) {
           },
           exclude: ['esri', 'dojo', 'dojox', 'dijit', 'text', 'domReady', 'i18n'],
           inlineText: true,
+          // NOTE: this does not work
+          // locale: "es",
           optimize: 'uglify2'
         }
       },
@@ -85,6 +87,9 @@ module.exports = function (grunt) {
       // r.js doesn't trace background image paths through url()
       single: {
         files: [
+          // this doesn't work - dojo loader tries to get from JSAPI
+          // 404: http://js.arcgis.com/3.7/js/dojo/app/wijit/nls/es/colors.js
+          // {expand: true, cwd: 'src/js/app/wijit/', src:['nls/**'], dest: 'dist/js/app/wijit/'},
           {expand: true, cwd: 'src/js/app/wijit/resources/', src:['img/**'], dest: 'dist/js/app/wijit/resources/'}
         ]
       }
