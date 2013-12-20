@@ -70,9 +70,10 @@ module.exports = function (grunt) {
           from: 'js/main.js',
           to: 'js/main-built.js'
         },
+        // set locale to test i18n
         {
-          from: '{ name: "app",',
-          to: '// { name: "app",'
+          from: '// locale:',
+          to: 'locale:'
         }]
       }
     },
@@ -84,12 +85,11 @@ module.exports = function (grunt) {
 
     copy: {
       // needed for single file build
-      // r.js doesn't trace background image paths through url()
       single: {
         files: [
-          // this doesn't work - dojo loader tries to get from JSAPI
-          // 404: http://js.arcgis.com/3.7/js/dojo/app/wijit/nls/es/colors.js
-          // {expand: true, cwd: 'src/js/app/wijit/', src:['nls/**'], dest: 'dist/js/app/wijit/'},
+          // single file build doesn't copy over nls
+          {expand: true, cwd: 'src/js/app/wijit/', src:['nls/**'], dest: 'dist/js/app/wijit/'},
+          // r.js doesn't copy background image paths that it traces through url()
           {expand: true, cwd: 'src/js/app/wijit/resources/', src:['img/**'], dest: 'dist/js/app/wijit/resources/'}
         ]
       }
