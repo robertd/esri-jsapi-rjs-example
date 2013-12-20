@@ -38,6 +38,8 @@ module.exports = function (grunt) {
           },
           exclude: ['esri', 'dojo', 'dojox', 'dijit', 'text', 'domReady', 'i18n'],
           inlineText: true,
+          // NOTE: this does not work
+          // locale: "es",
           optimize: 'uglify2'
         }
       },
@@ -68,9 +70,10 @@ module.exports = function (grunt) {
           from: 'js/main.js',
           to: 'js/main-built.js'
         },
+        // set locale to test i18n
         {
-          from: '{ name: "app",',
-          to: '// { name: "app",'
+          from: '// locale:',
+          to: 'locale:'
         }]
       }
     },
@@ -82,9 +85,11 @@ module.exports = function (grunt) {
 
     copy: {
       // needed for single file build
-      // r.js doesn't trace background image paths through url()
       single: {
         files: [
+          // single file build doesn't copy over nls
+          {expand: true, cwd: 'src/js/app/wijit/', src:['nls/**'], dest: 'dist/js/app/wijit/'},
+          // r.js doesn't copy background image paths that it traces through url()
           {expand: true, cwd: 'src/js/app/wijit/resources/', src:['img/**'], dest: 'dist/js/app/wijit/resources/'}
         ]
       }
