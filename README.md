@@ -7,7 +7,7 @@ This repository is an example of 2 different ways to use [r.js](http://requirejs
 
 *Only the application's local files will be inlcuded in the build output. No Esri or Dojo AMD modules will be included. The output application will still need a script tag that references the Dojo loader inlcuded in Esri's CDN copy of the JSAPI.
 
-**NOTE: this is still more of an experiment than a boilerplate that can be used in production applications. See the [Potential Issues](#potential-issues) section below**
+**NOTE: this boilerplate is a work in progress, but is relatively stable. See the [Known Issues](#known-issues) section below**
 
 ## Running the Examples
 1. [Fork and clone the repo](https://help.github.com/articles/fork-a-repo)
@@ -27,15 +27,17 @@ This repository is an example of 2 different ways to use [r.js](http://requirejs
   2. Referencing the above plugins in all modules by replacing `dojo/text` and `dojo/domReady` with `text` and `domReady`
   3. Adding aliases to the Dojo config to point the above reference back to the Dojo plugins as follows:
 ```
-aliases: [['text', 'dojo/text'], ['domReady', 'dojo/domReady']]
+aliases: [['text', 'dojo/text'], ['domReady', 'dojo/domReady'], ['i18n', 'dojo/i18n']]
 ```
 
 The above worked for a multi-file build, but there were still issues with inlining text (templates) when creating a single-file build. @odoe figured out how to do a quick find and replace on the built file using `grunt-contrib-text-replace` that enabled the Dojo loader to load the built templates.
 
 NOTE: Whenever there is more than one way to accomplish a build step, the examples in this repo give preference to doing things the r.js way. For example, it's possible to use `grunt-contrib-cssmin` to minify and concatenate CSS files, but the examples in this repo let r.js do it (using `cssIn` in the case of the single-file build).
 
-## Potential Issues
-Other Dojo plugins like `i18n` and `has` have not been tested and it is likely that they will cause build issues.
+## Known Issues
+The build configurations have not been tested against app code that uses the `has` plugin, and it is likely to fail. In theory, it is possible to bring the include the requireJS `has` plugin as a git submodule, and alias the `dojo/has` the way the other plugins have been. If your project uses `has` we invite you to fork, test, and submit a pull request if it works!
+
+Usign r.js to build your Esri/Dojo app may require you to make minor strucutural changes to your app code (i.e. using the above aliases for the Dojo plugins, or moving your initial require statement out of index.html and into a 'main' JavaScript file).
 
 ## License
 
