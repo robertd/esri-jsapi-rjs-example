@@ -1,0 +1,9 @@
+[submodule "deps/text"]
+	path = deps/text
+	url = git@github.com:requirejs/text.git
+[submodule "deps/domReady"]
+	path = deps/domReady
+	url = git@github.com:requirejs/domReady.git
+[submodule "deps/i18n"]
+	path = deps/i18n
+	url = https://github.com/requirejs/i18n.git

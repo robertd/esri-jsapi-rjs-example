@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create a Map</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.8/js/esri/css/esri.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script>
+        var dojoConfig = {
+            parseOnLoad: true,
+            // locale: "es",
+            aliases: [['text', 'dojo/text'], ['domReady', 'dojo/domReady'], ['i18n', 'dojo/i18n']],
+            packages: [
+                { name: "app", location: location.pathname.replace(/[^\/]+$/, '') + "js/app" }
+            ]
+        };
+    </script>
+    <script src="http://js.arcgis.com/3.8/"></script>
+</head>
+
+<body class="claro">
+    <div id="mapDivA"></div>
+    <div id="mapDivB"></div>
+    <div id="mapDivC"></div>
+    <div id="templatedWidget"></div>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
